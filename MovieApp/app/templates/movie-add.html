@@ -1,0 +1,29 @@
+
+
+<div>
+    <h1>New Movie</h1>
+    <form novalidate name='movieEntry' ng-submit='addMovie(movie)' >
+            <p>
+                Id <input unique-imdb-id required type="text" name="imdbId" id="imdbId" ng-model='movie.imdbID'>
+                {{movieEntry.imdbId.$class}}
+            
+            </p>
+            <p>Title <input required type="text" name="Title" id="Title" ng-model='movie.Title'>
+                
+            </p>
+            <p>Type <input valid-values='movie|tv show|game' type="text" name="Type" id="Type" ng-model='movie.Type'></p>
+            <p>Rating <input min='1' max='10' type="number" name="Rating" id="Rating" ng-model='movie.imdbRating'></p>
+            <p>Year <input type="text" name="Year" id="Year" ng-model='movie.Year'></p>
+            <p>Poster <input type="text" name="Poster" id="Poster" ng-model='movie.Poster'></p>
+            <p><input ng-disabled='!movieEntry.$valid' type="submit" name="imdbId" id="imdbId" value='Add'>
+                {{movieEntry.$valid}}
+            </p>
+    </form>
+
+    <h2>Movie</h2>
+    {{movie|json}}
+    
+    <h2>movieEntry</h2>
+    {{movieEntry}}
+
+</div>

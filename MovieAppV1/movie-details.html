@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='movie-app'>
+
+<head>
+
+    <title>Angular App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+
+    <link rel='stylesheet' href='app/movie-app.css' />
+
+</head>
+
+<body ng-controller='MovieDetailsController'>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: red;">
+        <a class="navbar-brand  mb-0 h1" href="#">
+            <h1>Movies Web</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href='/'>
+                        <i class="fa fa-list" aria-hidden="true"></i>Movies </a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <i class="fa fa-plus" aria-hidden="true"></i>New Movie </a>
+                </li>
+
+            </ul>
+            <span class="navbar-text">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
+                    </li>
+
+
+                </ul>
+            </span>
+        </div>
+    </nav>
+
+    <div class='container top-margin'>
+        <h1>{{movie.Title}}</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img ng-src='{{movie.Poster}}' width="50%" />
+            </div>
+            <div class="col-md-6">
+                <h2>
+                    <ul>
+                        <li>Year :
+                            <strong>{{movie.Year}}</strong>
+                        </li>
+                        <li>Type :
+                            <strong>{{movie.Type}}</strong>
+                        </li>
+                        <li>Rating :
+                            <strong>{{movie.imdbRating}}</strong>
+                        </li>
+                    </ul>
+                </h2>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- 3rd part library -->
+    <script src='lib/bootstrap/dist/js/bootstrap.min.js'></script>
+
+    <!-- angualar libraries -->
+    <script src='lib/angular/angular.min.js'></script>
+
+    <!-- angular modules -->
+    <!-- other modules first -->
+
+    <!-- app module here -->
+
+    <script src='app/movie-app.module.js'></script>
+
+
+
+    <!-- angular services -->
+
+    <!-- angular filters/directives -->
+
+    <!-- angular controllers -->
+    <script src='app/movie-details.controller.js'></script>
+
+</body>
+
+</html>

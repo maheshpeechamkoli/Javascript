@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='movie-app'>
+
+<head>
+    <title>Movies Web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    <base href='/'/>
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.css">
+
+    <link rel='stylesheet' href='app/styles/movie-app.css' />
+    
+
+</head>
+
+<body >
+    <nav ng-controller='NavigationController' class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: red;">
+        <a class="navbar-brand  mb-0 h1" href="/">
+            <h1>Movies Web</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#!/movies">
+                        <i class="fa fa-list" aria-hidden="true"></i>Movies </a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href='#!/movie/add'>
+                        <i class="fa fa-plus" aria-hidden="true"></i>New Movie </a>
+                </li>
+
+            </ul>
+            <span class="navbar-text">
+                <user-status></user-status>
+            </span>
+        </div>
+    </nav>
+
+    <!-- main content area-->
+    <div class='container top-margin bottom-margin main-body'>
+        <ng-view></ng-view>
+    </div>
+    <!-- end of main content area -->
+
+    
+    <footer class='footer'>
+        &copy; http://movies.conceptarchitect.in
+    </footer>
+     
+
+    <!-- 3rd part library -->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/tether/dist/js/tether.min.js"></script>
+    <script src='lib/bootstrap/dist/js/bootstrap.min.js'></script>
+
+    <!-- angualar libraries -->
+    <script src='lib/angular/angular.min.js'></script>
+    <script src='lib/angular-route/angular-route.min.js'></script>
+
+    <!-- angular modules -->
+    <!-- other modules first -->
+    <script src='app/bin/ca-utils.module.js'></script>
+    <script src='app/bin/ca-rating-recommendation.filter.js'></script>
+    <script src='app/bin/ca-dismiss-click.directive.js'></script>
+    <script src='app/bin/ca-range.directive.js'></script>
+    <script src='app/bin/valid-values-validation.directive.js'></script>
+
+    <!-- app module here -->
+
+    <script src='app/bin/movie-app.module.js'></script>
+
+
+    <!-- angular services -->
+    <!--
+    <script src='app/bin/simple-movie.service.js'></script>
+    -->
+    <script src='app/bin/http-movie.service.js'></script>
+    <!-- angular filters/directives -->
+    
+    <script src='app/bin/site-header.directive.js'></script>
+    <script src='app/bin/user-status.directive.js'></script>
+    <script src='app/bin/visible-password.directive.js'></script>
+    <script src='app/bin/movie-info.directive.js'></script>
+    <script src='app/bin/unique-imdb-validation.directive.js'></script>
+    
+
+    <!-- angular controllers -->
+    <script src='app/bin/movie-list.controller.js'></script>
+    <script src='app/bin/movie-details.controller.js'></script>
+    <script src='app/bin/navigation.controller.js'></script>
+    <script src='app/bin/movie-add.controller.js'></script>
+    <script src='app/bin/not-found.controller.js'></script>
+</body>
+
+</html>

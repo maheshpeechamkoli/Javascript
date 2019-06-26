@@ -1,0 +1,25 @@
+{
+  "name": "movieapp",
+  "description": "A Movie App created using Angularjs",
+  "main": "index.js",
+  "authors": [
+    "Vivek Dutta Mishra"
+  ],
+  "license": "ISC",
+  "directory": "lib/",
+  "homepage": "http://app.conceptarchitect.in",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "v4.0.0-alpha.6",
+    "font-awesome": "fontawesome#^4.7.0",
+    "angular": "angularjs#^1.6.7",
+    "angular-route": "^1.6.7"
+  }
+}

@@ -1,0 +1,29 @@
+.text-shadow{
+    text-shadow: -2px -2px 2px darkred;
+}
+.nav-link{
+    font-size:1.5rem;
+    font-weight: bolder;
+    vertical-align: middle ;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255,1);
+}
+
+li .fa{
+    margin-right:5px;
+}
+.top-margin{
+    margin-top:80px;
+}
+
+.table-mode{
+    display:table;
+    width:100%;
+}
+
+.disable-link,.disable-link:hover{
+    background:gray;
+    cursor: not-allowed;
+}

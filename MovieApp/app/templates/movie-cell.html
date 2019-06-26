@@ -1,0 +1,14 @@
+
+
+<click-to-dismiss='dblclick' dismiss-mode='hide' class='col-md-3 movie-cell'>
+  <div  >
+        <p>{{movie.Title}}</p>
+        <img ng-src='{{movie.Poster}}' width='{{imageSize}}%' />
+        <p>{{movie.imdbRating}}</p>
+        <a href='#!/movie/details/{{movie.imdbID}}'
+            class='btn btn-sm btn-primary'
+        >Details</a>
+        <range value='movie.imdbRating' delta='0.5'/>
+    </div>  
+</click-to-dismiss>
+

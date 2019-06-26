@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Javascript Demos</title>
+
+    
+</head>
+<body>
+    <h1>Output on Console</h1>
+
+    
+    <script>
+        
+        function avg(x,y){
+            return (x+y)/2;
+        }
+       
+        var averge=avg;
+        console.log('average(12,15)',averge(12,15));
+
+        
+        var sum=function plus(x,y){
+            return x+y;
+        };
+
+        var minus=function (x,y){
+            return x-y;
+        }
+
+        console.log('sum(20,40)',
+        sum(20,40));
+
+        //console.log('plus(20,40)',
+        //plus(20,40));
+
+        console.log('minus(20,40)',minus(20,40));
+
+
+            
+    </script>
+</body>
+</html>

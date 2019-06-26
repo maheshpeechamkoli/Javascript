@@ -1,0 +1,68 @@
+.text-shadow{
+    text-shadow: -2px -2px 2px darkred;
+}
+.nav-link{
+    font-size:1.5rem;
+    font-weight: bolder;
+    vertical-align: middle ;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255,1);
+}
+
+li .fa{
+    margin-right:5px;
+}
+.top-margin{
+    margin-top:80px;
+}
+
+.bottom-margin{
+    margin-bottom: 50px;
+}
+
+.table-mode{
+    display:table;
+    width:100%;
+}
+
+.disable-link,.disable-link:hover{
+    background:gray;
+    cursor: not-allowed;
+}
+
+.footer{
+    font-weight: bold;
+    position: fixed;
+    height: 50px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+.movie-cell{
+    display:table;
+    border:2px solid black;
+    margin:5px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+}
+
+
+input.ng-invalid.ng-touched{
+    background: lightcoral;
+}
+
+input.ng-valid.ng-touched{
+    background: lightgreen;
+}
+input.ng-pending{
+    background:lightblue;
+}
+

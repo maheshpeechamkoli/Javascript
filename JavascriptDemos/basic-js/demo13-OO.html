@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Javascript Demos</title>
+
+    
+</head>
+<body>
+    <h1>Output on Console</h1>
+
+    
+    <script>
+
+       var p1=new Object(); //an object is created
+
+       p1.x=3; //now p1 has a field x
+       p1.y=4; //looks like I have a point object
+
+       function printPoint(p){
+           console.log('Point('+p.x+","+p.y+")");
+       }
+
+       p1.show=printPoint;
+
+       printPoint(p1);
+
+       p1.show(p1);
+
+       p1.show();
+       
+
+    </script>
+</body>
+</html>

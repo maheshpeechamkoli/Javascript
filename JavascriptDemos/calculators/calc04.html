@@ -1,0 +1,186 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+
+    <style>
+        fieldset {
+            width: 60%;
+            margin: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <fieldset>
+        <legend>Toolbar</legend>
+        <div>
+            Number
+            <input type='text' id='number' />
+            <input type='button' value='Add To List' onclick="addToList();" />
+            <input type='button' value='Clear Display'  onclick="window.clear();"/>
+            <input type='button' value='Reset Calculator' onclick="reset();" />
+
+            <br/>
+            <input type='button' value='Sum'  onclick="doSum();"/>
+            <input type='button' value='Average'  onclick="doAvg();"/>
+            <input type='button' value='Find Min'  onclick="doFindMin();"/>
+
+        </div>
+
+    </fieldset>
+
+    <hr/>
+
+    <fieldset>
+        <legend>Console</legend>
+
+        <div id='console'>
+
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Number List</legend>
+
+        <ul id='numberList'>
+
+        </ul>
+
+        <input type='button' value='refresh list' onclick="refresh();" />
+    </fieldset>
+
+
+    <script>
+        function Calculator(){
+            var numbers=[];
+
+            this.addToList=function(value){
+                if(!isNaN(value))
+                    numbers.push(value);
+                
+                return !isNaN(value);
+            }
+
+            this.sum=function(){
+                var result=0;
+                for(var i=0;i<numbers.length;i++)
+                    result+=numbers[i];
+                return result;   
+            };
+
+            this.avg=function(){
+                return this.sum()/numbers.length;
+            }
+
+            this.clear=function(){
+                numbers=[];
+            }
+        }
+    </script>
+
+    <script>
+        function Input(id){
+            var el=document.getElementById(id);
+            this.readNumber=function(){
+                return parseFloat(el.value);
+            };
+            this.read=function(){
+                return el.value;
+            };
+            this.clear=function(){
+                el.value='';
+            };
+        }
+    
+        function Writer(id, tag){
+            tag= tag || 'p'; //default tag to p
+            var start='<'+tag+'>';
+            var end='</'+tag+'>';
+            var el=document.getElementById(id);
+
+            this.write=function(msg){
+                var content=start+msg+end;
+                el.innerHTML+=content;
+            };
+
+            this.clear=function(){
+                el.innerHTML='';
+            };
+
+
+
+        }
+
+    </script>
+
+    <script>
+        var calc=new Calculator();          //var numbers=[];
+        var numberBox=new Input('number');  //var numberBox=document.getElementById('number');
+        
+        var numberList=new Writer('numberList','li');   //document.getElementById('numberList');
+        var consoleWriter=new Writer('console');        //document.getElementById('console');
+
+        function addToList(){
+            
+            var number=numberBox.readNumber();
+
+            if(calc.addToList(number)){
+                //numberList.innerHTML+=("<li>"+number+"</li>");
+                numberList.write(number);
+                numbers.push(number);
+            }
+            else{
+                //console.innerHTML+=("<p>invalid input </p>");
+                consoleWriter.write('invalid input');
+            }
+            
+        }
+
+        function doSum(){
+            var result=calc.sum();
+            consoleWriter.write('sum is '+result);
+        }
+
+        
+
+        function doAvg(){
+            var avg=calc.avg();
+            consoleWriter.write('average is '+avg);
+        }
+
+        function doFindMin(){
+            
+           consoleWriter.write("Not Implemented Yet");
+        }
+        
+        function clear(){
+            //console.log('clear is called');
+            consoleWriter.clear();
+            numberList.clear();
+            numberBox.clear();
+        }
+        
+        function reset(){
+            clear();
+            calc.clear();
+        }
+
+        function refresh(){
+            
+            consoleWriter.write("Not Implemented Yet ");
+        }
+
+
+    </script>
+</body>
+
+</html>

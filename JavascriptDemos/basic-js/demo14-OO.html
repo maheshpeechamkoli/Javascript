@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Javascript Demos</title>
+
+    
+</head>
+<body>
+    <h1>Output on Console</h1>
+
+    
+    <script>
+
+       var p1=new Object(); //an object is created
+
+       p1.x=3; //now p1 has a field x
+       p1.y=4; //looks like I have a point object
+
+       function printPoint(){
+           //this refers to caller context
+           console.log('Point('+this.x+","+this.y+")");
+       }
+
+       p1.show=printPoint;
+
+       p1.show();
+       var x=1,y=1;
+       
+       printPoint();
+
+       
+
+    </script>
+</body>
+</html>

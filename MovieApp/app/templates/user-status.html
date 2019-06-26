@@ -1,0 +1,15 @@
+<ul class="navbar-nav mr-auto">
+    <li ng-if='user' class="nav-item">
+        <a class="nav-link" ng-click='logout()'>
+            {{user}}<i class="fa fa-sign-out"  aria-hidden="true"></i>
+        </a>
+    </li>
+    <li ng-if='!user' class="nav-item">
+        <a class="nav-link" ng-click='login()'>
+            <i class="fa fa-sign-in"  aria-hidden="true"></i>Login</a>
+    </li>
+    <li ng-if='!user' class="nav-item" href='/user/register'>
+        <a class="nav-link">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>Register</a>
+    </li>
+</ul>
