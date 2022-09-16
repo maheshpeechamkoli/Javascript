@@ -12,7 +12,7 @@
   "author": "Vivek Dutta Mishra",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "fontawesome": "^4.7.2",
     "jquery": "^3.2.1"
   }
